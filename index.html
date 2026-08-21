@@ -138,57 +138,75 @@
     <li>
       <p class="step-head"><span class="step-no">1</span>Google AI Studio を開く</p>
       <p>ブラウザで <a href="https://aistudio.google.com/" target="_blank" rel="noopener">aistudio.google.com</a> を開きます。
-         Googleアカウントでのログインを求められたらログインしてください。</p>
+         Googleアカウントでのログインを求められたら、ログインしてください。</p>
       <figure>
-        <div class="shot-todo">（ここに画面の写真が入ります）</div>
+        <img src="images/step1-open.png" alt="Google AI Studio のトップ画面">
+        <figcaption>この画面が出れば大丈夫です。</figcaption>
       </figure>
     </li>
 
     <li>
-      <p class="step-head"><span class="step-no">2</span>「APIキー」のページへ進む</p>
-      <p>画面の中に <strong>「Get API key」</strong>（または「APIキーを取得」）という項目があります。
-         左側のメニューか、画面右上のあたりにあります。それを押します。</p>
-      <p>初めての場合は、利用規約への同意を求められます。内容を確認して進めてください。</p>
+      <p class="step-head"><span class="step-no">2</span>「Get API key」を押す</p>
+      <p>画面の<strong>左下にある鍵のマーク</strong>を押します。マウスを乗せると
+         <strong>「Get API key」</strong>と出ます。初めての場合は、利用規約への同意を求められることがあります。</p>
       <figure>
-        <div class="shot-todo">（ここに画面の写真が入ります）</div>
+        <img src="images/step2-get-api-key.png" alt="左下の鍵アイコン（Get API key）の位置">
+        <figcaption>赤い枠の中の鍵マークです。</figcaption>
       </figure>
     </li>
 
     <li>
       <p class="step-head"><span class="step-no">3</span>キーを作る</p>
-      <p><strong>「Create API key」</strong>（APIキーを作成）を押します。
-         プロジェクトを選ぶよう求められたら、提案されたものをそのまま選んで構いません。</p>
-      <p>数秒で、<code>AIza…</code> のような長い文字列が表示されます。これがAPIキーです。</p>
+      <p>「API キー」の一覧が開きます。右上の <strong>「API キーを作成」</strong> を押してください。</p>
       <figure>
-        <div class="shot-todo">（ここに画面の写真が入ります）</div>
+        <img src="images/step3-create-button.png" alt="APIキー一覧の右上にある「API キーを作成」ボタン">
+      </figure>
+      <p>小さな窓が開きます。<strong>名前もプロジェクトも、書かれているままで構いません</strong>。
+         そのまま <strong>「キーを作成」</strong> を押します。</p>
+      <figure>
+        <img src="images/step3-create-dialog.png" alt="「新しいキーを作成する」の窓">
+        <figcaption>名前は後から見分けるための札です。変えても構いません。</figcaption>
       </figure>
     </li>
 
     <li>
       <p class="step-head"><span class="step-no">4</span>キーをコピーする</p>
-      <p>キーの横にあるコピーのボタンを押します。手で選んでコピーする場合は、
-         <strong>前後に空白や改行が入らないよう</strong>に気をつけてください。</p>
+      <p>作成すると「API キーの詳細」が開きます。右下の <strong>「鍵をコピー」</strong> を押してください。</p>
+      <figure>
+        <img src="images/step4-copy-key.png" alt="「API キーの詳細」の右下にある「鍵をコピー」ボタン">
+        <figcaption>黒く塗ってある場所に、あなたのキーが表示されます。<strong>人に見せないでください。</strong></figcaption>
+      </figure>
+      <p>この窓を閉じてしまっても大丈夫です。一覧のコピーのマークからも、同じキーをコピーできます。</p>
+      <figure>
+        <img src="images/step4-copy-from-list.png" alt="APIキー一覧の各行にあるコピーのマーク">
+      </figure>
       <div class="note">
-        <strong>この画面を閉じる前に</strong>コピーしてください。キーは後から見直せないことがあります。
-        もし見失っても、同じ手順でもう一度作り直せます（古い鍵は消しておくと安心です）。
+        手で選んでコピーすると、<strong>前後に空白や改行が紛れ込む</strong>ことがあります。
+        なるべくコピーのボタンを使ってください。
       </div>
     </li>
 
     <li>
       <p class="step-head"><span class="step-no">5</span>アプリに貼り付ける</p>
-      <p>LLMTRPGを開き、<strong>「AI接続設定」</strong>（タイトル画面、または世界作成画面の「AI接続設定を変更」）を開きます。</p>
-      <p>方式を <strong>「API方式」</strong> に切り替え、APIキーの欄をタップして、コピーしたキーを貼り付けます。
-         モデルの一覧が読み込めれば成功です。</p>
+      <p>LLMTRPG を開き、タイトル画面の <strong>「AI接続設定」</strong>
+         （または世界作成画面の「AI接続設定を変更」）を開きます。</p>
+      <p><strong>「コピペ方式を使う」のチェックを外す</strong>と、APIキーの欄が現れます。その欄をタップしてください。</p>
       <figure>
-        <div class="shot-todo">（ここにアプリの画面の写真が入ります）</div>
+        <img src="images/step5-app-settings.png" alt="アプリのAI接続設定。APIキーの欄をタップする">
       </figure>
+      <p>入力の窓が開くので、<strong>「貼り付け」</strong>を押し、続けて <strong>「確定」</strong> を押します。</p>
+      <figure>
+        <img src="images/step5-app-paste.png" alt="入力ウィンドウの「貼り付け」ボタン">
+        <figcaption>「表示する」を押すと、貼り付いた中身を目で確かめられます。</figcaption>
+      </figure>
+      <p>モデル名の欄に一覧が読み込めれば成功です。あとは今までどおり遊ぶだけで、コピー＆貼り付けは要らなくなります。</p>
     </li>
 
   </ol>
 
   <h2>無料で使える回数について</h2>
   <p>Geminiの無料枠は<strong>モデルごとに1日の回数が決まっています</strong>。回数の多いモデルもあれば、1日20回ほどのモデルもあります。</p>
-  <p>アプリのモデル選択には、その目安が添えてあります。たくさん遊ぶ日は、回数の多い「Flash Lite」系を選ぶと安心です。
+  <p>アプリのモデル選択には、その目安が添えてあります（例:「gemini-3.1-flash-lite（1日500回）」）。たくさん遊ぶ日は、回数の多い「Flash Lite」系を選ぶと安心です。
      回数を使い切っても、翌日には戻ります（その日はコピペ方式に切り替えて続けることもできます）。</p>
   <div class="note alert">
     <strong>無料枠では、入力した内容がAIの学習に使われる場合があります。</strong>
