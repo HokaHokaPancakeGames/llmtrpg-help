@@ -81,6 +81,13 @@
   /* ---- 画像 ---- */
   figure{margin:16px 0 0}
   figure img{max-width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
+  figure a.zoom{display:block;position:relative}
+  figure a.zoom::after{
+    content:"タップで拡大";
+    position:absolute;right:8px;bottom:8px;
+    background:rgba(7,11,26,.82);border:1px solid var(--line);border-radius:999px;
+    color:var(--dim);font-size:11px;padding:3px 10px;
+  }
   figcaption{color:var(--dim);font-size:13px;margin-top:8px}
   .shot-todo{
     border:1px dashed var(--line);border-radius:10px;
@@ -140,7 +147,7 @@
       <p>ブラウザで <a href="https://aistudio.google.com/" target="_blank" rel="noopener">aistudio.google.com</a> を開きます。
          Googleアカウントでのログインを求められたら、ログインしてください。</p>
       <figure>
-        <img src="images/step1-open.png" alt="Google AI Studio のトップ画面">
+        <a class="zoom" href="images/step1-open.png" target="_blank" rel="noopener"><img src="images/step1-open.png" alt="Google AI Studio のトップ画面"></a>
         <figcaption>この画面が出れば大丈夫です。</figcaption>
       </figure>
     </li>
@@ -150,7 +157,7 @@
       <p>画面の<strong>左下にある鍵のマーク</strong>を押します。マウスを乗せると
          <strong>「Get API key」</strong>と出ます。初めての場合は、利用規約への同意を求められることがあります。</p>
       <figure>
-        <img src="images/step2-get-api-key.png" alt="左下の鍵アイコン（Get API key）の位置">
+        <a class="zoom" href="images/step2-get-api-key.png" target="_blank" rel="noopener"><img src="images/step2-get-api-key.png" alt="左下の鍵アイコン（Get API key）の位置"></a>
         <figcaption>赤い枠の中の鍵マークです。</figcaption>
       </figure>
     </li>
@@ -159,12 +166,12 @@
       <p class="step-head"><span class="step-no">3</span>キーを作る</p>
       <p>「API キー」の一覧が開きます。右上の <strong>「API キーを作成」</strong> を押してください。</p>
       <figure>
-        <img src="images/step3-create-button.png" alt="APIキー一覧の右上にある「API キーを作成」ボタン">
+        <a class="zoom" href="images/step3-create-button.png" target="_blank" rel="noopener"><img src="images/step3-create-button.png" alt="APIキー一覧の右上にある「API キーを作成」ボタン"></a>
       </figure>
       <p>小さな窓が開きます。<strong>名前もプロジェクトも、書かれているままで構いません</strong>。
          そのまま <strong>「キーを作成」</strong> を押します。</p>
       <figure>
-        <img src="images/step3-create-dialog.png" alt="「新しいキーを作成する」の窓">
+        <a class="zoom" href="images/step3-create-dialog.png" target="_blank" rel="noopener"><img src="images/step3-create-dialog.png" alt="「新しいキーを作成する」の窓"></a>
         <figcaption>名前は後から見分けるための札です。変えても構いません。</figcaption>
       </figure>
     </li>
@@ -173,12 +180,12 @@
       <p class="step-head"><span class="step-no">4</span>キーをコピーする</p>
       <p>作成すると「API キーの詳細」が開きます。右下の <strong>「鍵をコピー」</strong> を押してください。</p>
       <figure>
-        <img src="images/step4-copy-key.png" alt="「API キーの詳細」の右下にある「鍵をコピー」ボタン">
+        <a class="zoom" href="images/step4-copy-key.png" target="_blank" rel="noopener"><img src="images/step4-copy-key.png" alt="「API キーの詳細」の右下にある「鍵をコピー」ボタン"></a>
         <figcaption>黒く塗ってある場所に、あなたのキーが表示されます。<strong>人に見せないでください。</strong></figcaption>
       </figure>
       <p>この窓を閉じてしまっても大丈夫です。一覧のコピーのマークからも、同じキーをコピーできます。</p>
       <figure>
-        <img src="images/step4-copy-from-list.png" alt="APIキー一覧の各行にあるコピーのマーク">
+        <a class="zoom" href="images/step4-copy-from-list.png" target="_blank" rel="noopener"><img src="images/step4-copy-from-list.png" alt="APIキー一覧の各行にあるコピーのマーク"></a>
       </figure>
       <div class="note">
         手で選んでコピーすると、<strong>前後に空白や改行が紛れ込む</strong>ことがあります。
@@ -192,11 +199,11 @@
          （または世界作成画面の「AI接続設定を変更」）を開きます。</p>
       <p><strong>「コピペ方式を使う」のチェックを外す</strong>と、APIキーの欄が現れます。その欄をタップしてください。</p>
       <figure>
-        <img src="images/step5-app-settings.png" alt="アプリのAI接続設定。APIキーの欄をタップする">
+        <a class="zoom" href="images/step5-app-settings.png" target="_blank" rel="noopener"><img src="images/step5-app-settings.png" alt="アプリのAI接続設定。APIキーの欄をタップする"></a>
       </figure>
       <p>入力の窓が開くので、<strong>「貼り付け」</strong>を押し、続けて <strong>「確定」</strong> を押します。</p>
       <figure>
-        <img src="images/step5-app-paste.png" alt="入力ウィンドウの「貼り付け」ボタン">
+        <a class="zoom" href="images/step5-app-paste.png" target="_blank" rel="noopener"><img src="images/step5-app-paste.png" alt="入力ウィンドウの「貼り付け」ボタン"></a>
         <figcaption>「表示する」を押すと、貼り付いた中身を目で確かめられます。</figcaption>
       </figure>
       <p>モデル名の欄に一覧が読み込めれば成功です。あとは今までどおり遊ぶだけで、コピー＆貼り付けは要らなくなります。</p>
