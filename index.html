@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APIキーの取り方 — LLMTRPG</title>
+<meta name="description" content="LLMTRPGで「API方式」を使うための、Gemini APIキーの取得手順です。無料でできます。">
+<style>
+  :root{
+    --ink:#070B1A;          /* 夜空の地 */
+    --panel:#121A33;
+    --panel-2:#18213E;
+    --line:#2A3557;
+    --text:#E9EDF9;
+    --dim:#98A4C4;
+    --star:#8CC0FF;         /* 星の青＝唯一の強い色 */
+    --warn:#FFD277;
+    --danger:#FF9AA2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,system-ui,sans-serif;
+    line-height:1.85;
+    font-size:16px;
+    letter-spacing:.02em;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 96px}
+
+  /* ---- 見出し ---- */
+  header{
+    padding:56px 0 32px;
+    text-align:center;
+    background:
+      radial-gradient(1px 1px at 20% 30%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 70% 20%, #cfe0ff 50%, transparent 50%),
+      radial-gradient(1px 1px at 85% 60%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 35% 75%, #bcd4ff 50%, transparent 50%),
+      radial-gradient(1200px 300px at 50% -80px, #1B2547 0%, transparent 70%);
+  }
+  .eyebrow{
+    color:var(--star);font-size:13px;letter-spacing:.22em;margin:0 0 10px;
+  }
+  h1{
+    margin:0 0 12px;font-size:29px;line-height:1.4;text-wrap:balance;
+  }
+  .lede{margin:0 auto;max-width:34em;color:var(--dim);font-size:15px}
+
+  /* ---- 本文 ---- */
+  h2{
+    margin:48px 0 16px;font-size:20px;line-height:1.5;
+    padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  p{margin:0 0 14px}
+  a{color:var(--star)}
+  code{
+    background:var(--panel-2);border:1px solid var(--line);border-radius:6px;
+    padding:.1em .45em;font-size:.92em;
+    font-family:ui-monospace,"SFMono-Regular",Consolas,"Courier New",monospace;
+  }
+
+  /* ---- 手順（本当に順番があるので番号を振る） ---- */
+  ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+  ol.steps > li{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;position:relative;
+  }
+  .step-no{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--star);color:#08122B;font-weight:700;font-size:14px;
+    margin-right:10px;flex:none;
+  }
+  .step-head{display:flex;align-items:center;margin:0 0 10px;font-size:17px;font-weight:700}
+  ol.steps p:last-child{margin-bottom:0}
+
+  /* ---- 画像 ---- */
+  figure{margin:16px 0 0}
+  figure img{max-width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line)}
+  figcaption{color:var(--dim);font-size:13px;margin-top:8px}
+  .shot-todo{
+    border:1px dashed var(--line);border-radius:10px;
+    padding:26px 16px;text-align:center;color:var(--dim);font-size:13px;
+    background:var(--panel-2);
+  }
+
+  /* ---- 注意書き ---- */
+  .note{
+    border-left:3px solid var(--warn);background:var(--panel);
+    border-radius:0 10px 10px 0;padding:14px 18px;margin:18px 0;
+  }
+  .note.alert{border-left-color:var(--danger)}
+  .note strong{color:var(--warn)}
+  .note.alert strong{color:var(--danger)}
+
+  ul.plain{margin:0;padding-left:1.2em}
+  ul.plain li{margin:0 0 8px}
+
+  /* ---- よくある詰まり ---- */
+  dl.faq{margin:0}
+  dl.faq dt{font-weight:700;margin:22px 0 6px}
+  dl.faq dd{margin:0;color:var(--dim)}
+
+  footer{
+    margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
+    color:var(--dim);font-size:13px;text-align:center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">LLMTRPG</p>
+    <h1>APIキーの取り方</h1>
+    <p class="lede">アプリの「API方式」を使うと、コピー＆貼り付けをせずに、ボタン1つで物語が進みます。<br>
+      そのために必要な鍵（APIキー）は、Googleのサイトで<strong>無料</strong>で作れます。5分ほどで終わります。</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2>はじめに知っておくこと</h2>
+  <ul class="plain">
+    <li><strong>Googleアカウント</strong>が1つ必要です（Gmailを使っていればそれで大丈夫です）。</li>
+    <li>無料で作れます。クレジットカードの登録は要りません。</li>
+    <li>APIキーは<strong>あなただけの鍵</strong>です。人に見せたり、SNSに貼ったりしないでください。</li>
+    <li>キーが無くても、<strong>コピペ方式</strong>ならアプリは今までどおり遊べます。API方式は「楽をするための道」です。</li>
+  </ul>
+
+  <h2>手順</h2>
+  <ol class="steps">
+
+    <li>
+      <p class="step-head"><span class="step-no">1</span>Google AI Studio を開く</p>
+      <p>ブラウザで <a href="https://aistudio.google.com/" target="_blank" rel="noopener">aistudio.google.com</a> を開きます。
+         Googleアカウントでのログインを求められたらログインしてください。</p>
+      <figure>
+        <div class="shot-todo">（ここに画面の写真が入ります）</div>
+      </figure>
+    </li>
+
+    <li>
+      <p class="step-head"><span class="step-no">2</span>「APIキー」のページへ進む</p>
+      <p>画面の中に <strong>「Get API key」</strong>（または「APIキーを取得」）という項目があります。
+         左側のメニューか、画面右上のあたりにあります。それを押します。</p>
+      <p>初めての場合は、利用規約への同意を求められます。内容を確認して進めてください。</p>
+      <figure>
+        <div class="shot-todo">（ここに画面の写真が入ります）</div>
+      </figure>
+    </li>
+
+    <li>
+      <p class="step-head"><span class="step-no">3</span>キーを作る</p>
+      <p><strong>「Create API key」</strong>（APIキーを作成）を押します。
+         プロジェクトを選ぶよう求められたら、提案されたものをそのまま選んで構いません。</p>
+      <p>数秒で、<code>AIza…</code> のような長い文字列が表示されます。これがAPIキーです。</p>
+      <figure>
+        <div class="shot-todo">（ここに画面の写真が入ります）</div>
+      </figure>
+    </li>
+
+    <li>
+      <p class="step-head"><span class="step-no">4</span>キーをコピーする</p>
+      <p>キーの横にあるコピーのボタンを押します。手で選んでコピーする場合は、
+         <strong>前後に空白や改行が入らないよう</strong>に気をつけてください。</p>
+      <div class="note">
+        <strong>この画面を閉じる前に</strong>コピーしてください。キーは後から見直せないことがあります。
+        もし見失っても、同じ手順でもう一度作り直せます（古い鍵は消しておくと安心です）。
+      </div>
+    </li>
+
+    <li>
+      <p class="step-head"><span class="step-no">5</span>アプリに貼り付ける</p>
+      <p>LLMTRPGを開き、<strong>「AI接続設定」</strong>（タイトル画面、または世界作成画面の「AI接続設定を変更」）を開きます。</p>
+      <p>方式を <strong>「API方式」</strong> に切り替え、APIキーの欄をタップして、コピーしたキーを貼り付けます。
+         モデルの一覧が読み込めれば成功です。</p>
+      <figure>
+        <div class="shot-todo">（ここにアプリの画面の写真が入ります）</div>
+      </figure>
+    </li>
+
+  </ol>
+
+  <h2>無料で使える回数について</h2>
+  <p>Geminiの無料枠は<strong>モデルごとに1日の回数が決まっています</strong>。回数の多いモデルもあれば、1日20回ほどのモデルもあります。</p>
+  <p>アプリのモデル選択には、その目安が添えてあります。たくさん遊ぶ日は、回数の多い「Flash Lite」系を選ぶと安心です。
+     回数を使い切っても、翌日には戻ります（その日はコピペ方式に切り替えて続けることもできます）。</p>
+  <div class="note alert">
+    <strong>無料枠では、入力した内容がAIの学習に使われる場合があります。</strong>
+    実在の個人情報や、人に知られたくないことは書かないでください。
+  </div>
+
+  <h2>安全のために</h2>
+  <ul class="plain">
+    <li>APIキーは<strong>あなたの端末の中だけ</strong>に保存されます。アプリの作者を含め、誰かに送られることはありません。</li>
+    <li>他の人に教えないでください。鍵を知っている人は、あなたの無料枠を使えてしまいます。</li>
+    <li>うっかり人に見せてしまったら、AI Studio で<strong>その鍵を削除</strong>して、新しく作り直してください。</li>
+  </ul>
+
+  <h2>うまくいかないときは</h2>
+  <dl class="faq">
+    <dt>モデルの一覧が出てこない</dt>
+    <dd>キーの前後に空白や改行が紛れていることがよくあります。もう一度、まるごとコピーし直して貼り付けてみてください。</dd>
+
+    <dt>「権限がありません」といった返事が返る</dt>
+    <dd>作ったばかりのキーは、使えるようになるまで少し時間がかかることがあります。数分おいてから試してください。
+        それでも直らない場合は、キーを作り直すのが早道です。</dd>
+
+    <dt>今日はもう返事が返ってこない</dt>
+    <dd>その日の無料枠を使い切った可能性があります。回数の多いモデルへ切り替えるか、翌日まで待つか、
+        コピペ方式に切り替えて続けてください。</dd>
+
+    <dt>画面の見た目がこの説明と違う</dt>
+    <dd>Google側の画面は時々変わります。「APIキー（API key）」という言葉を探せば、たいていたどり着けます。</dd>
+  </dl>
+
+  <footer>
+    LLMTRPG — ほかほかぱんけーき<br>
+    このページはアプリの利用者向けの案内です。
+  </footer>
+
+</div>
+</body>
+</html>
