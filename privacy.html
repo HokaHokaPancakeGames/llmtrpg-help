@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー — LLMTRPG</title>
+<meta name="description" content="LLMTRPGのプライバシーポリシーです。当アプリは利用者の個人データを収集も送信もしません。">
+<style>
+  :root{
+    --ink:#070B1A;
+    --panel:#121A33;
+    --panel-2:#18213E;
+    --line:#2A3557;
+    --text:#E9EDF9;
+    --dim:#98A4C4;
+    --star:#8CC0FF;
+    --warn:#FFD277;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,system-ui,sans-serif;
+    line-height:1.85;
+    font-size:16px;
+    letter-spacing:.02em;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px 96px}
+  header{
+    padding:56px 0 32px;
+    text-align:center;
+    background:
+      radial-gradient(1px 1px at 20% 30%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 70% 20%, #cfe0ff 50%, transparent 50%),
+      radial-gradient(1px 1px at 85% 60%, #fff 50%, transparent 50%),
+      radial-gradient(1px 1px at 35% 75%, #bcd4ff 50%, transparent 50%),
+      radial-gradient(1200px 300px at 50% -80px, #1B2547 0%, transparent 70%);
+  }
+  .eyebrow{color:var(--star);font-size:13px;letter-spacing:.22em;margin:0 0 10px}
+  h1{margin:0 0 12px;font-size:29px;line-height:1.4;text-wrap:balance}
+  .lede{margin:0 auto;max-width:34em;color:var(--dim);font-size:15px}
+  h2{
+    margin:48px 0 16px;font-size:20px;line-height:1.5;
+    padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  p{margin:0 0 14px}
+  a{color:var(--star)}
+  ul{margin:0 0 16px;padding-left:1.3em}
+  li{margin:0 0 8px}
+  .card{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:var(--radius);padding:18px 20px;margin:0 0 18px;
+  }
+  .card.key{background:var(--panel-2);border-color:#3A4A7A}
+  .note{color:var(--warn)}
+  .meta{color:var(--dim);font-size:14px}
+  table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:15px}
+  th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:var(--panel-2);color:var(--star);font-weight:600;white-space:nowrap}
+  .scroll{overflow-x:auto}
+  footer{
+    margin-top:64px;padding-top:20px;border-top:1px solid var(--line);
+    color:var(--dim);font-size:14px;text-align:center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">LLMTRPG</p>
+  <h1>プライバシーポリシー</h1>
+  <p class="lede">このアプリは、あなたの個人データを集めていません。<br>何が端末の中に留まり、何が外へ出るのかを、以下に正直に書きます。</p>
+</header>
+
+<h2>要点</h2>
+
+<div class="card key">
+  <ul>
+    <li><strong>当方は、あなたの個人データを収集も保存もしていません。</strong>アプリからの利用状況の送信、広告、解析ツールは一切使っていません。</li>
+    <li><strong>セーブデータと設定は、あなたの端末の中だけに保存されます。</strong>当方のサーバーはありません。</li>
+    <li><strong>「API方式」を選んだ場合に限り、あなたが入力した内容がGoogleのGeminiへ送られます。</strong>これはあなたとGoogleの間のやり取りで、当方はその内容を受け取りません。</li>
+  </ul>
+</div>
+
+<h2>端末の中に保存されるもの</h2>
+
+<p>次のデータは、あなたの端末の中にのみ保存されます。外部へ送信されることはありません。アプリをアンインストールすると、これらは端末から削除されます。</p>
+
+<div class="scroll">
+<table>
+  <tr><th>保存されるもの</th><th>内容</th></tr>
+  <tr><td>セーブデータ</td><td>作成した世界、キャラクター、物語の本文、進行状況</td></tr>
+  <tr><td>設定</td><td>方式（コピペ／API）、文字サイズ、音量などの各種設定</td></tr>
+  <tr><td>APIキー</td><td>「API方式」を使う場合に、あなたが入力したGeminiのAPIキー</td></tr>
+</table>
+</div>
+
+<p class="note">⚠ APIキーは、端末内に平文（暗号化されていない状態）で保存されます。端末を他の人と共有している場合はご注意ください。キーはアプリの設定画面からいつでも消せます。</p>
+
+<h2>外部へ送信されるもの</h2>
+
+<h3>コピペ方式（既定）</h3>
+<p>アプリからは<strong>何も送信されません</strong>。アプリは依頼文を作ってクリップボードへコピーするだけで、それをどのAIサービスへ貼り付けるかはあなたが決めます。その先で起きることには、そのサービスの規約とプライバシーポリシーが適用されます。</p>
+
+<h3>API方式</h3>
+<p>あなたがAPIキーを設定して「API方式」を選んだ場合、アプリはあなたの入力（物語の内容、キャラクターの情報、あなたが書いた行動など）を、あなたのAPIキーを使って直接Googleへ送信します。</p>
+<ul>
+  <li>送信先はGoogleであり、<strong>当方のサーバーを経由しません</strong>。当方は送信内容を受け取ることも、見ることもできません。</li>
+  <li>この通信には <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Gemini API の利用規約</a> と <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a> が適用されます。</li>
+  <li class="note">⚠ Geminiの<strong>無料枠</strong>では、送信した内容がGoogleのモデルの改善に利用される場合があります。機密情報や、他人に知られたくない個人的な情報は入力しないでください。</li>
+</ul>
+
+<h2>使用していないもの</h2>
+<ul>
+  <li>広告（広告SDK・広告識別子）</li>
+  <li>アクセス解析・利用状況の計測</li>
+  <li>クラッシュレポートの自動送信</li>
+  <li>アカウント登録・ログイン</li>
+  <li>連絡先、位置情報、カメラ、マイク、写真へのアクセス</li>
+</ul>
+
+<!--
+  ⚠ 課金機能（アプリ内購入）を実装したら、下のブロックのコメントを外して有効にしてください。
+     Google Play Billing だけを使い、自前サーバーを持たない構成を前提にした文面です。
+     広告や自前サーバーでのレシート検証を入れた場合は、この文面では足りません。
+
+<h2>アプリ内購入について</h2>
+<p>アプリ内購入の決済は、すべてGoogle Playが処理します。<strong>当方はクレジットカード番号、氏名、住所などの決済情報を受け取りません。</strong>購入の記録はあなたの端末とGoogleアカウントの中で管理され、当方のサーバーへ送られることはありません。決済に関する取り扱いについては <a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a> をご確認ください。</p>
+-->
+
+<h2>お子様の利用について</h2>
+<p>本アプリは、13歳未満のお子様を対象としたものではありません。物語の文章はAIが生成するため、内容を事前に統制することはできません。</p>
+
+<h2>あなたの権利について</h2>
+<p>当方はあなたの個人データを保持していないため、開示・訂正・削除のご請求の対象となるデータはありません。端末内のデータは、アプリのアンインストール、またはアプリ内の削除機能によって、あなたご自身の操作でいつでも消去できます。</p>
+<p>Googleへ送信された内容の取り扱いについては、Googleへ直接お問い合わせください。</p>
+
+<h2>本ポリシーの変更</h2>
+<p>本ポリシーを変更した場合は、このページを更新し、下記の「最終更新日」を改めます。</p>
+
+<h2>お問い合わせ</h2>
+<div class="card">
+  <p>本ポリシーおよび本アプリに関するお問い合わせ先です。</p>
+  <p>
+    提供者: ほかほかぱんけーき<br>
+    連絡先: <strong>（ここに連絡用メールアドレスを記入してください）</strong>
+  </p>
+</div>
+
+<footer>
+  制定日: 2026年8月23日 ／ 最終更新日: 2026年8月23日<br>
+  LLMTRPG — ほかほかぱんけーき<br>
+  <a href="./">APIキーの取り方へ戻る</a>
+</footer>
+
+</div>
+</body>
+</html>
