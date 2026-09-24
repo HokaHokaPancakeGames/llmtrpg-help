@@ -89,6 +89,19 @@
     color:var(--dim);font-size:11px;padding:3px 10px;
   }
   figcaption{color:var(--dim);font-size:13px;margin-top:8px}
+  /* PCとスマホの画面を並べる（スマホは縦長なので細く・狭い画面では縦に積む） */
+  .pair{display:flex;gap:14px;align-items:flex-start;margin-top:16px}
+  .pair figure{margin:0}
+  .pair .pc{flex:3 1 0;min-width:0}
+  .pair .phone{flex:1 1 0;min-width:0;max-width:210px}
+  @media (max-width:560px){
+    .pair{flex-direction:column}
+    .pair .phone{max-width:240px;align-self:center}
+  }
+  .device{
+    display:inline-block;font-size:12px;color:var(--star);border:1px solid var(--line);
+    border-radius:999px;padding:0 10px;margin-bottom:6px;
+  }
   .shot-todo{
     border:1px dashed var(--line);border-radius:10px;
     padding:26px 16px;text-align:center;color:var(--dim);font-size:13px;
@@ -144,11 +157,25 @@
 
     <li>
       <p class="step-head"><span class="step-no">1</span>Google AI Studio を開く</p>
-      <p>ブラウザで <a href="https://aistudio.google.com/" target="_blank" rel="noopener">aistudio.google.com</a> を開きます。
-         Googleアカウントでのログインを求められたら、ログインしてください。</p>
+      <p>ブラウザで <a href="https://aistudio.google.com/" target="_blank" rel="noopener">aistudio.google.com</a> を開きます。</p>
+      <p>初めて開くと、英語の<strong>紹介ページ</strong>（「Build with Google AI Studio」と大きく書かれた黒い画面）が出ます。
+         <strong>「Get started」</strong>を押してください。
+         PCでは右上、スマホでは画面の真ん中あたりの青いボタンです。</p>
+      <div class="pair">
+        <figure class="pc">
+          <span class="device">PC</span>
+          <a class="zoom" href="images/step0-welcome-pc.png" target="_blank" rel="noopener"><img src="images/step0-welcome-pc.png" alt="PCの紹介ページ。右上の「Get started」"></a>
+        </figure>
+        <figure class="phone">
+          <span class="device">スマホ</span>
+          <a class="zoom" href="images/step0-welcome-phone.png" target="_blank" rel="noopener"><img src="images/step0-welcome-phone.png" alt="スマホの紹介ページ。真ん中の青い「Get started」"></a>
+        </figure>
+      </div>
+      <p style="margin-top:14px">Googleアカウントでのログインを求められたら、ログインしてください。
+         ログイン済みの場合は、紹介ページを飛ばして次の画面が開くこともあります。</p>
       <figure>
         <a class="zoom" href="images/step1-open.png" target="_blank" rel="noopener"><img src="images/step1-open.png" alt="Google AI Studio のトップ画面"></a>
-        <figcaption>この画面が出れば大丈夫です。</figcaption>
+        <figcaption>このような画面が出れば大丈夫です（真ん中の中身は日によって変わります）。</figcaption>
       </figure>
     </li>
 
